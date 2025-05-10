@@ -1,0 +1,112 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}AI Developer Portfolio | About This Portfolio{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title">
+    <div class="container">
+        <h1 class="fade-in">About This Portfolio</h1>
+        <div class="breadcrumbs fade-in">
+            <a href="{% url 'home' %}">Home</a> / <span>About Portfolio</span>
+        </div>
+    </div>
+</section>
+
+<!-- About Portfolio Section -->
+<section class="about-portfolio">
+    <div class="container">
+        <div class="about-portfolio-content">
+            <div class="about-portfolio-text fade-in">
+                <h2>Purpose of This Portfolio</h2>
+                <p>This portfolio website serves as a comprehensive showcase of my skills, experiences, and projects as a Computer Science graduate specializing in Artificial Intelligence. It is designed to provide potential employers, collaborators, and clients with a clear understanding of my capabilities and the value I can bring to their organizations.</p>
+                
+                <p>Through this platform, I aim to demonstrate not only my technical proficiency but also my approach to problem-solving, my passion for innovation, and my commitment to continuous learning in the rapidly evolving field of AI and technology.</p>
+                
+                <h3>For Recruiters and Employers</h3>
+                <p>If you're a recruiter or potential employer, this portfolio offers insights into my technical skills, project experience, and professional journey. You'll find detailed information about my:</p>
+                <ul>
+                    <li>Educational background and specialization in AI</li>
+                    <li>Technical skills and proficiency levels</li>
+                    <li>Project portfolio showcasing practical applications</li>
+                    <li>Professional experience through internships</li>
+                    <li>Certifications and continuous learning efforts</li>
+                </ul>
+                
+                <p>I'm currently seeking opportunities where I can apply my expertise in AI, machine learning, and software development to solve challenging problems and contribute to innovative solutions.</p>
+                
+                <h3>For Collaborators and Fellow Developers</h3>
+                <p>If you're a fellow developer or potential collaborator, this portfolio provides a glimpse into my coding style, project approach, and areas of interest. I'm always open to collaboration on interesting projects, particularly those involving:</p>
+                <ul>
+                    <li>Machine learning and deep learning applications</li>
+                    <li>Natural language processing</li>
+                    <li>Computer vision</li>
+                    <li>Data analysis and visualization</li>
+                    <li>Web application development</li>
+                </ul>
+                
+                <p>Feel free to reach out if you have a project idea or if you're looking for a collaborator with my skill set.</p>
+            </div>
+            
+            <div class="about-portfolio-tech fade-in">
+                <h3>Technical Implementation</h3>
+                <p>This portfolio website is built using modern web technologies and follows best practices in web development:</p>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="tech-details">
+                            <h4>Backend</h4>
+                            <p>Django web framework with Python, providing a robust and scalable foundation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="tech-details">
+                            <h4>Frontend</h4>
+                            <p>HTML5, CSS3, and JavaScript with a focus on responsive design and modern UI principles.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="tech-details">
+                            <h4>Database</h4>
+                            <p>SQLite for development, with Django ORM for database interactions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="tech-details">
+                            <h4>Responsive Design</h4>
+                            <p>Mobile-first approach using Flexbox and CSS Grid for optimal viewing on all devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2>Ready to Connect?</h2>
+            <p>If you'd like to discuss potential opportunities or collaborations, I'd love to hear from you.</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg">Get In Touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

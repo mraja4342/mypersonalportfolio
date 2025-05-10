@@ -1,0 +1,205 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}AI Developer Portfolio | Certifications{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title">
+    <div class="container">
+        <h1 class="fade-in">Certifications</h1>
+        <div class="breadcrumbs fade-in">
+            <a href="{% url 'home' %}">Home</a> / <span>Certifications</span>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Intro -->
+<section class="certifications-intro">
+    <div class="container">
+        <div class="section-intro fade-in">
+            <p>I believe in continuous learning and professional development. Below are some of the certifications I've earned to enhance my skills and stay current with the latest technologies and methodologies in AI and software development.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Grid -->
+<section class="certifications">
+    <div class="container">
+        <div class="certifications-grid stagger-fade-in">
+            {% if certifications %}
+                {% for certification in certifications %}
+                    <div class="certification-card card">
+                        <div class="certification-icon">
+                            {% if "python" in certification.title|lower %}
+                                <i class="fab fa-python"></i>
+                            {% elif "deep learning" in certification.title|lower or "machine learning" in certification.title|lower or "ai" in certification.title|lower %}
+                                <i class="fas fa-brain"></i>
+                            {% elif "sql" in certification.title|lower or "database" in certification.title|lower %}
+                                <i class="fas fa-database"></i>
+                            {% elif "web" in certification.title|lower or "html" in certification.title|lower or "css" in certification.title|lower or "javascript" in certification.title|lower %}
+                                <i class="fas fa-code"></i>
+                            {% elif "aws" in certification.title|lower or "cloud" in certification.title|lower %}
+                                <i class="fas fa-cloud"></i>
+                            {% elif "tensorflow" in certification.title|lower %}
+                                <i class="fas fa-project-diagram"></i>
+                            {% else %}
+                                <i class="fas fa-certificate"></i>
+                            {% endif %}
+                        </div>
+                        <div class="certification-details">
+                            <h3>{{ certification.title }}</h3>
+                            <h4>{{ certification.organization }}</h4>
+                            <p class="certification-date">Issued: {{ certification.date_earned|date:"F Y" }}</p>
+                            <p>{{ certification.description }}</p>
+                            {% if certification.credential_url %}
+                                <a href="{{ certification.credential_url }}" class="btn btn-sm" target="_blank">View Certificate</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <!-- Certification 1 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>Python for Data Science and Machine Learning</h3>
+                        <h4>Coursera</h4>
+                        <p class="certification-date">Issued: March 2023</p>
+                        <p>Comprehensive course covering Python libraries for data analysis, visualization, and machine learning including NumPy, Pandas, Matplotlib, Seaborn, and Scikit-learn.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>Deep Learning Specialization</h3>
+                        <h4>DeepLearning.AI</h4>
+                        <p class="certification-date">Issued: January 2023</p>
+                        <p>Five-course specialization covering neural networks, improving deep neural networks, structuring machine learning projects, convolutional neural networks, and sequence models.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>SQL for Data Science</h3>
+                        <h4>Udacity</h4>
+                        <p class="certification-date">Issued: November 2022</p>
+                        <p>Course focused on using SQL for data manipulation, filtering, aggregation, and joining data from multiple tables for analysis purposes.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>Full Stack Web Development</h3>
+                        <h4>freeCodeCamp</h4>
+                        <p class="certification-date">Issued: August 2022</p>
+                        <p>Comprehensive certification covering responsive web design, JavaScript algorithms and data structures, front-end libraries, and API development.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 5 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>AWS Machine Learning Foundations</h3>
+                        <h4>Amazon Web Services</h4>
+                        <p class="certification-date">Issued: June 2022</p>
+                        <p>Introduction to machine learning concepts and AWS services for building, training, and deploying machine learning models at scale.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- Certification 6 -->
+                <div class="certification-card card">
+                    <div class="certification-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="certification-details">
+                        <h3>TensorFlow Developer Certificate</h3>
+                        <h4>Google</h4>
+                        <p class="certification-date">Issued: April 2022</p>
+                        <p>Professional certification demonstrating proficiency in using TensorFlow to solve deep learning and machine learning problems.</p>
+                        <a href="#" class="btn btn-sm" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Skills Gained -->
+<section class="skills-gained">
+    <div class="container">
+        <h2 class="section-title fade-in">Skills Gained</h2>
+
+        <div class="skills-categories fade-in">
+            <div class="skills-category">
+                <h3>Technical Skills</h3>
+                <ul class="skills-list">
+                    <li>Advanced Python Programming</li>
+                    <li>Deep Learning Frameworks (TensorFlow, PyTorch)</li>
+                    <li>Data Analysis and Visualization</li>
+                    <li>SQL and Database Management</li>
+                    <li>Web Development (HTML, CSS, JavaScript)</li>
+                    <li>Cloud Computing (AWS)</li>
+                </ul>
+            </div>
+
+            <div class="skills-category">
+                <h3>Methodologies</h3>
+                <ul class="skills-list">
+                    <li>Machine Learning Workflows</li>
+                    <li>Neural Network Architecture Design</li>
+                    <li>Data Preprocessing Techniques</li>
+                    <li>Model Evaluation and Validation</li>
+                    <li>Agile Development</li>
+                    <li>Test-Driven Development</li>
+                </ul>
+            </div>
+
+            <div class="skills-category">
+                <h3>Soft Skills</h3>
+                <ul class="skills-list">
+                    <li>Problem Solving</li>
+                    <li>Critical Thinking</li>
+                    <li>Technical Documentation</li>
+                    <li>Project Management</li>
+                    <li>Communication</li>
+                    <li>Continuous Learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2>Let's Connect</h2>
+            <p>Interested in discussing how my skills and qualifications can benefit your team?</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg">Contact Me</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,217 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}AI Developer Portfolio | Projects{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title">
+    <div class="container">
+        <h1 class="fade-in">My Projects</h1>
+        <div class="breadcrumbs fade-in">
+            <a href="{% url 'home' %}">Home</a> / <span>Projects</span>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Filter -->
+<section class="projects-filter">
+    <div class="container">
+        <div class="filter-buttons fade-in">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI & ML</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="data">Data Science</button>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects">
+    <div class="container">
+        <div class="project-grid stagger-fade-in">
+            {% if projects %}
+                {% for project in projects %}
+                    <div class="project-card" id="project-{{ project.id }}" data-category="ai">
+                        <div class="project-image">
+                            {% if project.image %}
+                                <img src="{% static 'portfolio/images/'|add:project.image %}" alt="{{ project.title }}">
+                            {% else %}
+                                <div class="image-placeholder">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                            {% endif %}
+                            <div class="project-category">{{ project.technologies|truncatechars:20 }}</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.description|truncatechars:150 }}</p>
+                            <div class="project-tech">
+                                {% for tech in project.technologies.split|slice:":4" %}
+                                    <span>{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="project-links">
+                                {% if project.demo_link %}
+                                    <a href="{{ project.demo_link }}" class="btn btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                {% endif %}
+                                {% if project.github_link %}
+                                    <a href="{{ project.github_link }}" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <!-- Placeholder Projects if no projects in database -->
+                <!-- Project 1 -->
+                <div class="project-card" id="project1" data-category="ai">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-category">AI & ML</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Intelligent Conversational AI Chatbot</h3>
+                        <p>A sophisticated chatbot built with Python and TensorFlow that uses natural language processing to understand and respond to user queries in a human-like manner.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>NLP</span>
+                            <span>Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" id="project2" data-category="data">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="project-category">Data Science</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Data Visualization Dashboard</h3>
+                        <p>A comprehensive dashboard that transforms complex datasets into intuitive visualizations, enabling users to gain insights through interactive charts and graphs.</p>
+                        <div class="project-tech">
+                            <span>D3.js</span>
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" id="project3" data-category="ai">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="project-category">AI & ML</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Advanced Image Recognition System</h3>
+                        <p>A computer vision application that can identify and classify objects in images with high accuracy using convolutional neural networks and transfer learning.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>OpenCV</span>
+                            <span>CNN</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" id="project4" data-category="web">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-category">Web Development</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Responsive E-Learning Platform</h3>
+                        <p>A full-stack web application that provides an interactive learning experience with features like course management, progress tracking, and integrated assessment tools.</p>
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2>Have a Project in Mind?</h2>
+            <p>I'm always open to discussing new projects and creative ideas.</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg">Let's Discuss</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        // Filter projects
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Show/hide projects based on filter
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}

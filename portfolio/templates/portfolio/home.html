@@ -1,0 +1,126 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}Mutukuri Raja | AI & IoT Developer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Hello, I'm <span class="highlight">Mutukuri Raja</span></h1>
+                <div class="typing-text" data-text="AI Enthusiast|Python Developer|IoT Developer">AI Enthusiast</div>
+                <p>A Computer Science graduate from Chalapathi Institute of Technology, Guntur, specializing in Artificial Intelligence, passionate about creating intelligent solutions that make a difference.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'projects' %}" class="btn">View My Work</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+
+            <div class="hero-image fade-in">
+                <div class="circuit-lines">
+                    <!-- Circuit lines will be added by JS -->
+                </div>
+                <div class="image-container glow-pulse">
+                    <img src="{% static 'portfolio/images/profile-photo.jpg' %}" alt="Mutukuri Raja" class="profile-photo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section Preview -->
+<section class="about-preview">
+    <div class="container">
+        <h2 class="section-title fade-in">About Me</h2>
+
+        <div class="about-preview-content">
+            <div class="about-preview-text fade-in">
+                <p>I'm a recent Computer Science graduate with a specialization in Artificial Intelligence. My journey in technology has equipped me with a strong foundation in Python, SQL, HTML, CSS, JavaScript, and Django.</p>
+                <p>With a passion for developing intelligent solutions, I strive to create applications that are not only functional but also intuitive and user-friendly.</p>
+                <a href="{% url 'about' %}" class="btn">Learn More</a>
+            </div>
+
+            <div class="skills-preview fade-in">
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="90"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">Machine Learning</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="85"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">Web Development</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-percentage="80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Preview -->
+<section class="projects-preview">
+    <div class="container">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+
+        <div class="project-grid stagger-fade-in">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-details">
+                        <h3>AI Chatbot</h3>
+                        <p>A conversational AI chatbot built with Python and TensorFlow</p>
+                        <a href="{% url 'projects' %}" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-details">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>Interactive dashboard for data analysis using D3.js</p>
+                        <a href="{% url 'projects' %}" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="{% url 'projects' %}" class="btn">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2>Let's Work Together</h2>
+            <p>I'm currently available for freelance work and full-time positions.</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg">Get In Touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

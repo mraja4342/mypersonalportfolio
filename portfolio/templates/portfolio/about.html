@@ -1,0 +1,210 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}Mutukuri Raja | About Me{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="page-title">
+    <div class="container">
+        <h1 class="fade-in">About Me</h1>
+        <div class="breadcrumbs fade-in">
+            <a href="{% url 'home' %}">Home</a> / <span>About Me</span>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image fade-in">
+                <div class="image-container glow-pulse">
+                    <img src="{% static 'portfolio/images/profile-photo.jpg' %}" alt="Mutukuri Raja" class="profile-photo">
+                </div>
+                <div class="circuit-lines">
+                    <!-- Circuit lines will be added by JS -->
+                </div>
+            </div>
+
+            <div class="about-text fade-in">
+                <h2>Who I Am</h2>
+                <p>I'm a Computer Science graduate from Chalapathi Institute of Technology, Guntur, with a specialization in Artificial Intelligence. My academic journey has equipped me with a strong foundation in both theoretical concepts and practical applications of AI technologies.</p>
+
+                <p>My passion for technology began at an early age, and I've been fascinated by the potential of AI to transform our world. Throughout my academic career, I've focused on developing skills that allow me to create intelligent solutions to real-world problems, particularly in the IoT space.</p>
+
+                <p>I believe in continuous learning and staying updated with the latest advancements in the field. When I'm not coding, you can find me exploring new technologies, participating in hackathons, or working on innovative IoT projects.</p>
+
+                <div class="personal-info">
+                    <div class="info-item">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value">Mutukuri Raja</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Degree:</span>
+                        <span class="info-value">B.Tech in Computer Science</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">University:</span>
+                        <span class="info-value">Chalapathi Institute of Technology, Guntur</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Specialization:</span>
+                        <span class="info-value">Artificial Intelligence</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">rajaamutukuri@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Phone:</span>
+                        <span class="info-value">+91 8919083252</span>
+                    </div>
+                </div>
+
+                <div class="about-buttons">
+                    <a href="{% url 'download_cv' %}" class="btn" target="_blank">Download CV</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills">
+    <div class="container">
+        <h2 class="section-title fade-in">My Skills</h2>
+
+        <div class="skills-content">
+            <div class="skills-text fade-in">
+                <p>I've developed a diverse skill set throughout my academic and professional journey. My technical expertise spans multiple programming languages, frameworks, and tools, with a particular focus on AI and web development technologies.</p>
+            </div>
+
+            <div class="skills-grid stagger-fade-in">
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+
+                    <div class="skill">
+                        <div class="skill-name">Python <span class="skill-percentage">90%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">SQL <span class="skill-percentage">85%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">HTML/CSS <span class="skill-percentage">80%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">JavaScript <span class="skill-percentage">75%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">Django <span class="skill-percentage">70%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="70"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Skills -->
+                <div class="skills-category">
+                    <h3>AI & Data Science</h3>
+
+                    <div class="skill">
+                        <div class="skill-name">Machine Learning <span class="skill-percentage">85%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">Deep Learning <span class="skill-percentage">80%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">Natural Language Processing <span class="skill-percentage">75%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">Computer Vision <span class="skill-percentage">70%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-name">Data Visualization <span class="skill-percentage">80%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="education">
+    <div class="container">
+        <h2 class="section-title fade-in">Education</h2>
+
+        <div class="timeline-container fade-in">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>B.Tech in Computer Science</h3>
+                    <h4>Chalapathi Institute of Technology, Guntur</h4>
+                    <p class="timeline-date">2019 - 2023</p>
+                    <p>Graduated with a specialization in Artificial Intelligence and Machine Learning. Developed a Contactless Doorbell System using IoT as my final year project.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>AI & Machine Learning Certification</h3>
+                    <h4>EDUskills</h4>
+                    <p class="timeline-date">2023</p>
+                    <p>Comprehensive program focused on practical applications of AI and machine learning algorithms. Gained hands-on experience with Python, TensorFlow, and data analysis techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content fade-in">
+            <h2>Interested in Working Together?</h2>
+            <p>I'm currently available for freelance work and full-time positions.</p>
+            <a href="{% url 'contact' %}" class="btn btn-lg">Get In Touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
